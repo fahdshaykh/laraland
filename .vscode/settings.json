@@ -1,4 +1,13 @@
 {
+    "eslint.validate": [
+        "javascript",
+        "javascriptvue",
+        "vue"
+    ],
+    "eslint.format.enable": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true  
+    },
     "files.autoSave": "afterDelay",
     "window.zoomLevel": 0,
     "workbench.colorTheme": "Umbra",
