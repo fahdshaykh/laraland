@@ -1,72 +1,72 @@
 <template>
     <form @submit.prevent="update">
-        <div>
-            <div>
-                <label for="beds">Beds</label>
-                <input type="text" v-model.number="form.beds" id="">
-                <div v-if="form.errors.beds">
+        <div class="grid grid-cols-6 gap-4">
+            <div class="col-span-2">
+                <label class="label" for="beds">Beds</label>
+                <input class="input" type="text" v-model.number="form.beds" id="">
+                <div class="input-error" v-if="form.errors.beds">
                     {{ form.errors.beds }}
                 </div>
             </div>
 
-            <div>
-                <label for="baths">baths</label>
-                <input type="text" v-model.number="form.baths" id="">
-                <div v-if="form.errors.baths">
+            <div class="col-span-2">
+                <label class="label" for="baths">baths</label>
+                <input class="input" type="text" v-model.number="form.baths" id="">
+                <div class="input-error" v-if="form.errors.baths">
                     {{ form.errors.baths }}
                 </div>
             </div>
 
-            <div>
-                <label for="area">Area</label>
-                <input type="text" v-model.number="form.area" id="">
-                <div v-if="form.errors.area">
+            <div class="col-span-2">
+                <label class="label" for="area">Area</label>
+                <input class="input" type="text" v-model.number="form.area" id="">
+                <div class="input-error" v-if="form.errors.area">
                     {{ form.errors.area }}
                 </div>
             </div>
 
-            <div>
-                <label for="city">City</label>
-                <input type="text" v-model.trim="form.city" id="">
-                <div v-if="form.errors.city">
+            <div class="col-span-4">
+                <label class="label" for="city">City</label>
+                <input class="input" type="text" v-model.trim="form.city" id="">
+                <div class="input-error" v-if="form.errors.city">
                     {{ form.errors.city }}
                 </div>
             </div>
 
-            <div>
-                <label for="code">Code</label>
-                <input type="text" v-model.number="form.code" id="">
-                <div v-if="form.errors.code">
+            <div class="col-span-2">
+                <label class="label" for="code">Code</label>
+                <input class="input" type="text" v-model.number="form.code" id="">
+                <div class="input-error" v-if="form.errors.code">
                     {{ form.errors.code }}
                 </div>
             </div>
 
-            <div>
-                <label for="street">Street</label>
-                <input type="text" v-model="form.street" id="">
-                <div v-if="form.errors.street">
+            <div class="col-span-4">
+                <label class="label" for="street">Street</label>
+                <input class="input" type="text" v-model="form.street" id="">
+                <div class="input-error" v-if="form.errors.street">
                     {{ form.errors.street }}
                 </div>
             </div>
 
-            <div>
-                <label for="steet_nr">Street Number</label>
-                <input type="text" v-model="form.street_nr" id="">
-                <div v-if="form.errors.street_nr">
+            <div class="col-span-2">
+                <label class="label" for="steet_nr">Street Number</label>
+                <input class="input" type="text" v-model="form.street_nr" id="">
+                <div class="input-error" v-if="form.errors.street_nr">
                     {{ form.errors.street_nr }}
                 </div>
             </div>
 
-            <div>
-                <label for="price">Price</label>
-                <input type="text" v-model.number="form.price" id="">
-                <div v-if="form.errors.price">
+            <div class="col-span-6">
+                <label class="label" for="price">Price</label>
+                <input class="input" type="text" v-model.number="form.price" id="">
+                <div class="input-error" v-if="form.errors.price">
                     {{ form.errors.price }}
                 </div>
             </div>
 
             <div>
-                <button type="submit">Update</button>
+                <button class="btn-primary" type="submit">Update</button>
             </div>
         </div>
     </form>
