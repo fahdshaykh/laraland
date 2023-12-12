@@ -6,7 +6,7 @@
     ],
     "eslint.format.enable": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true  
+        "source.fixAll.eslint": "explicit"
     },
     "files.autoSave": "afterDelay",
     "window.zoomLevel": 0,
