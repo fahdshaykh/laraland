@@ -16,12 +16,47 @@ class ListingController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $filters = $request->only([
+            'priceFrom', 'priceTo', 'beds', 'baths', 'areaFrom', 'areaTo'
+        ]);
+
+        // $query = Listing::MostRecent()->filter($filters);
+
+        
+        // if($filters['priceFrom'] ?? false) {
+        //     $query->where('price', '>=', $filters['priceFrom']);
+        // }
+
+        // if($filters['priceTo'] ?? false) {
+        //     $query->where('price', '<=', $filters['priceFrom']);
+        // }
+
+        // if($filters['beds'] ?? false) {
+        //     $query->where('beds', $filters['beds']);
+        // }
+
+        // if($filters['baths'] ?? false) {
+        //     $query->where('baths', $filters['baths']);
+        // }
+
+        // if($filters['areaFrom'] ?? false) {
+        //     $query->where('area', '>=', $filters['areaFrom']);
+        // }
+
+        // if($filters['areaTo'] ?? false) {
+        //     $query->where('area', '>=', $filters['areaTo']);
+        // }
+
         return inertia(
             'Listing/Index',
             [
-                'listings' => Listing::all()
+                'filters' => $filters,
+                'listings' => Listing::MostRecent()
+                    ->filter($filters)
+                    ->paginate(10)
+                    ->withQueryString()
             ]
         );
     }
