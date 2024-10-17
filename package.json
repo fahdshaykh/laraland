@@ -22,7 +22,7 @@
     },
     "dependencies": {
         "@inertiajs/progress": "^0.2.7",
-        "@inertiajs/vue3": "^1.0.14",
+        "@inertiajs/vue3": "^1.2.0",
         "lodash.debounce": "^4.0.8"
     }
 }
