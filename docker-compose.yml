@@ -15,3 +15,26 @@ services:
     restart: always
     ports:
       - 8080:8080
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
+    networks:
+      - app-network
+
+  app:
+    build:
+      context: .  # Specify the directory containing your Dockerfile, usually the current directory
+    environment:
+      MAIL_HOST: mailhog
+      MAIL_PORT: 1025
+    depends_on:
+      - mysql
+      - mailhog
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

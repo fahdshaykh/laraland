@@ -16,7 +16,7 @@ class ListingOfferController extends Controller
         $offer = $listing->offers()->save(
             Offer::make(
                 $request->validate([
-                    'amount' => 'required|integer|min:1|max:20000000'
+                    'amount' => 'required|integer|min:1|max:200000000'
                 ])
             )->bidder()->associate($request->user())
         );
